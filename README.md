@@ -1,7 +1,7 @@
 # Assign251_2 项目
 
 ## 项目概述
-这是一个基于Maven的Java项目，使用JUnit进行测试，并集成了代码覆盖率工具JaCoCo。
+这是一个基于Maven的内存日志管理系统项目，使用JUnit进行测试，并集成了代码覆盖率工具JaCoCo。
 
 ## 技术栈
 - Java 8
