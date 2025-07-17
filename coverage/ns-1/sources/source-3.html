@@ -1,0 +1,150 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=GBK"> 
+  <title>Coverage Report > VelocityLayout</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">assign251_2</a>
+</div>
+
+<h1>Coverage Summary for Class: VelocityLayout (assign251_2)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">VelocityLayout</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    60%
+  </span>
+  <span class="absValue">
+    (3/5)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    86.7%
+  </span>
+  <span class="absValue">
+    (13/15)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package assign251_2;
+&nbsp;
+&nbsp;import org.apache.log4j.Layout;
+&nbsp;import org.apache.log4j.spi.LoggingEvent;
+&nbsp;import org.apache.velocity.VelocityContext;
+&nbsp;import org.apache.velocity.app.Velocity;
+&nbsp;
+&nbsp;import java.io.StringWriter;
+&nbsp;
+&nbsp;public class VelocityLayout extends Layout {
+&nbsp;    private String pattern;
+&nbsp;
+<b class="fc">&nbsp;    public VelocityLayout(String pattern) {</b>
+<b class="fc">&nbsp;        this.pattern = pattern;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setPattern(String pattern) {
+<b class="fc">&nbsp;        this.pattern = pattern;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public String format(LoggingEvent event) {
+<b class="fc">&nbsp;        VelocityContext context = new VelocityContext();</b>
+<b class="fc">&nbsp;        context.put(&quot;c&quot;, event.getLoggerName());</b>
+<b class="fc">&nbsp;        context.put(&quot;d&quot;, event.getTimeStamp());</b>
+<b class="fc">&nbsp;        context.put(&quot;m&quot;, event.getMessage());</b>
+<b class="fc">&nbsp;        context.put(&quot;p&quot;, event.getLevel().toString());</b>
+<b class="fc">&nbsp;        context.put(&quot;t&quot;, event.getThreadName());</b>
+<b class="fc">&nbsp;        context.put(&quot;n&quot;, System.lineSeparator());</b>
+&nbsp;
+<b class="fc">&nbsp;        StringWriter writer = new StringWriter();</b>
+<b class="fc">&nbsp;        Velocity.evaluate(context, writer, &quot;VelocityLayout&quot;, pattern);</b>
+<b class="fc">&nbsp;        return writer.toString();</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public boolean ignoresThrowable() {
+<b class="nc">&nbsp;        return false;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public void activateOptions() {
+&nbsp;
+<b class="nc">&nbsp;    }</b>
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-11-14 11:13</div>
+</div>
+</body>
+</html>

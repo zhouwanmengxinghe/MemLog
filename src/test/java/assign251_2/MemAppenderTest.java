@@ -55,8 +55,7 @@ class MemAppenderTest {
     @Test
     void testPrintLogs() {
         VelocityLayout layout = new VelocityLayout("[$p] $m");
-        memAppender.setLayout(layout); // 设置布局
-
+        memAppender.setLayout(layout);
         logger.info("First log message");
         logger.info("Second log message");
 
@@ -70,7 +69,7 @@ class MemAppenderTest {
         Layout layout = new VelocityLayout("[$p] $m");
         memAppender.setLayout(layout);
 
-        // 测试是否正确设置了Layout
+
         assertSame(layout, memAppender.getLayout(), "Layout should be an instance of VelocityLayout");
 
         logger.info("Test message with layout");

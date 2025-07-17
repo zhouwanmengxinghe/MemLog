@@ -4,27 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8eb6e222-5480-4c1e-ac57-c15372c05ffa" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/assign251_2/MemAppender.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/assign251_2/VelocityLayout.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/assign251_2/MemAppenderTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/assign251_2/StressTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/assign251_2/VelocityLayoutTest.java" afterDir="false" />
+    <list default="true" id="8eb6e222-5480-4c1e-ac57-c15372c05ffa" name="更改" comment="First">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/assign251_2/MemAppender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/assign251_2/MemAppender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/assign251_2/MemAppenderMBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/assign251_2/MemAppenderMBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/assign251_2/VelocityLayout.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/assign251_2/VelocityLayout.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/assign251_2/MemAppenderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/assign251_2/MemAppenderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/assign251_2/StressTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/assign251_2/StressTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ExportToHTMLSettings">
+    <option name="OUTPUT_DIRECTORY" value="D:\software\assign251_2\coverage" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -43,25 +44,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "F:/software development/as2/assign251_2",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunAnythingCache">
     <option name="myCommands">
+      <command value="mvn test" />
       <command value="mvn clean install" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.MemAppenderTest.testDependencyInjectionOfLayout">
+  <component name="RunManager" selected="JUnit.StressTest">
     <configuration name="MemAppenderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="assign251_2" />
       <extension name="coverage">
@@ -93,38 +96,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MemAppenderTest.testDependencyInjectionOfLayout" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="assign251_2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="assign251_2.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="assign251_2" />
-      <option name="MAIN_CLASS_NAME" value="assign251_2.MemAppenderTest" />
-      <option name="METHOD_NAME" value="testDependencyInjectionOfLayout" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MemAppenderTest.testGetEventStringsWithoutLayout" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="assign251_2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="assign251_2.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="assign251_2" />
-      <option name="MAIN_CLASS_NAME" value="assign251_2.MemAppenderTest" />
-      <option name="METHOD_NAME" value="testGetEventStringsWithoutLayout" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="StressTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="assign251_2" />
       <extension name="coverage">
@@ -136,6 +107,38 @@
       <option name="PACKAGE_NAME" value="assign251_2" />
       <option name="MAIN_CLASS_NAME" value="assign251_2.StressTest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StressTest.compareAppenderPerformance" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="assign251_2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="assign251_2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="assign251_2" />
+      <option name="MAIN_CLASS_NAME" value="assign251_2.StressTest" />
+      <option name="METHOD_NAME" value="compareAppenderPerformance" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StressTest.stressTestMemAppenderWithDifferentMaxSizes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="assign251_2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="assign251_2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="assign251_2" />
+      <option name="MAIN_CLASS_NAME" value="assign251_2.StressTest" />
+      <option name="METHOD_NAME" value="stressTestMemAppenderWithDifferentMaxSizes(int)" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -157,11 +160,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.MemAppenderTest.testDependencyInjectionOfLayout" />
-        <item itemvalue="JUnit.MemAppenderTest" />
-        <item itemvalue="JUnit.MemAppenderTest.testGetEventStringsWithoutLayout" />
-        <item itemvalue="JUnit.VelocityLayoutTest" />
         <item itemvalue="JUnit.StressTest" />
+        <item itemvalue="JUnit.StressTest.compareAppenderPerformance" />
+        <item itemvalue="JUnit.VelocityLayoutTest" />
+        <item itemvalue="JUnit.MemAppenderTest" />
+        <item itemvalue="JUnit.StressTest.stressTestMemAppenderWithDifferentMaxSizes" />
       </list>
     </recent_temporary>
   </component>
@@ -175,11 +178,51 @@
       <updated>1731410685792</updated>
       <workItem from="1731410686966" duration="4463000" />
       <workItem from="1731415975274" duration="3447000" />
-      <workItem from="1731419448794" duration="3003000" />
+      <workItem from="1731419448794" duration="5740000" />
+      <workItem from="1731487476361" duration="10568000" />
+      <workItem from="1731544831141" duration="8073000" />
+      <workItem from="1731557074886" duration="126000" />
+      <workItem from="1731557309880" duration="123000" />
+      <workItem from="1731557970495" duration="80000" />
     </task>
+    <task id="LOCAL-00001" summary="First">
+      <option name="closed" value="true" />
+      <created>1731483104233</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1731483104233</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="First" />
+    <option name="LAST_COMMIT_MESSAGE" value="First" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/assign251_2$StressTest.ic" NAME="StressTest 覆盖结果" MODIFIED="1731553915311" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>assign251_2.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/assign251_2$MemAppenderTest.ic" NAME="MemAppenderTest 覆盖结果" MODIFIED="1731553937690" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>assign251_2.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/assign251_2$VelocityLayoutTest.ic" NAME="VelocityLayoutTest 覆盖结果" MODIFIED="1731553946725" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>assign251_2.*</FILTER>
+    </SUITE>
   </component>
 </project>

@@ -38,8 +38,9 @@ public class VelocityLayout extends Layout {
         return false;
     }
 
+
     @Override
     public void activateOptions() {
-        // Initialization if needed
+
     }
 }

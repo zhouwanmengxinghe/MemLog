@@ -1,0 +1,208 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=GBK"> 
+  <title>Coverage Report > MemAppender</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">assign251_2</a>
+</div>
+
+<h1>Coverage Summary for Class: MemAppender (assign251_2)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">MemAppender</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    85.7%
+  </span>
+  <span class="absValue">
+    (12/14)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    89.5%
+  </span>
+  <span class="absValue">
+    (34/38)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package assign251_2;
+&nbsp;
+&nbsp;import org.apache.log4j.AppenderSkeleton;
+&nbsp;import org.apache.log4j.Layout;
+&nbsp;import org.apache.log4j.spi.LoggingEvent;
+&nbsp;import java.util.ArrayList;
+&nbsp;import java.util.Collections;
+&nbsp;import java.util.List;
+&nbsp;
+&nbsp;public class MemAppender extends AppenderSkeleton {
+&nbsp;    private static MemAppender instance;
+&nbsp;    private List&lt;LoggingEvent&gt; logs;
+&nbsp;    private Layout layout;
+<b class="fc">&nbsp;    private int maxSize = 100;</b>
+<b class="fc">&nbsp;    private long discardedLogCount = 0;</b>
+&nbsp;
+<b class="fc">&nbsp;    private MemAppender() {</b>
+&nbsp;        // 默认使用ArrayList
+<b class="fc">&nbsp;        logs = new ArrayList&lt;&gt;();</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public static synchronized MemAppender getInstance() {
+<b class="fc">&nbsp;        if (instance == null) {</b>
+<b class="fc">&nbsp;            instance = new MemAppender();</b>
+&nbsp;            try {
+<b class="fc">&nbsp;                MemAppenderMBean.registerMBean(instance);</b>
+<b class="fc">&nbsp;            } catch (Exception e) {</b>
+<b class="fc">&nbsp;                e.printStackTrace();</b>
+<b class="nc">&nbsp;            }</b>
+&nbsp;        }
+<b class="fc">&nbsp;        return instance;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setLayout(Layout layout) {
+<b class="fc">&nbsp;        this.layout = layout;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public Layout getLayout() {
+<b class="fc">&nbsp;        return this.layout;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setMaxSize(int maxSize) {
+<b class="fc">&nbsp;        this.maxSize = maxSize;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public long getDiscardedLogCount() {
+<b class="fc">&nbsp;        return discardedLogCount;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public List&lt;LoggingEvent&gt; getCurrentLogs() {
+<b class="fc">&nbsp;        return Collections.unmodifiableList(logs);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    // 提供一个方法来初始化logs
+&nbsp;    public void initLogs(List&lt;LoggingEvent&gt; newLogs) {
+<b class="fc">&nbsp;        this.logs = newLogs;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Override
+&nbsp;    protected void append(LoggingEvent event) {
+<b class="fc">&nbsp;        if (logs.size() &gt;= maxSize) {</b>
+<b class="fc">&nbsp;            logs.remove(0);</b>
+<b class="fc">&nbsp;            discardedLogCount++;</b>
+&nbsp;        }
+<b class="fc">&nbsp;        logs.add(event);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public List&lt;String&gt; getEventStrings() {
+<b class="fc">&nbsp;        if (this.layout == null) {</b>
+<b class="fc">&nbsp;            throw new NullPointerException(&quot;Layout must be set before calling getEventStrings.&quot;);</b>
+&nbsp;        }
+<b class="fc">&nbsp;        List&lt;String&gt; formattedLogs = new ArrayList&lt;&gt;();</b>
+<b class="fc">&nbsp;        for (LoggingEvent event : logs) {</b>
+<b class="fc">&nbsp;            formattedLogs.add(this.layout.format(event));</b>
+<b class="fc">&nbsp;        }</b>
+<b class="fc">&nbsp;        return Collections.unmodifiableList(formattedLogs);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void printLogs() {
+<b class="fc">&nbsp;        if (this.layout == null) {</b>
+<b class="nc">&nbsp;            throw new IllegalStateException(&quot;Layout must be set before calling printLogs.&quot;);</b>
+&nbsp;        }
+&nbsp;
+<b class="fc">&nbsp;        for (LoggingEvent event : logs) {</b>
+<b class="fc">&nbsp;            System.out.println(this.layout.format(event));</b>
+<b class="fc">&nbsp;        }</b>
+<b class="fc">&nbsp;        logs.clear();</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public void close() {
+<b class="nc">&nbsp;        logs.clear();</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void clear() {
+<b class="fc">&nbsp;        logs.clear();</b>
+<b class="fc">&nbsp;        discardedLogCount = 0;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public boolean requiresLayout() {
+<b class="nc">&nbsp;        return true;</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-11-14 11:13</div>
+</div>
+</body>
+</html>

@@ -3,7 +3,6 @@ package assign251_2;
 import org.apache.log4j.AppenderSkeleton;
 import org.apache.log4j.Layout;
 import org.apache.log4j.spi.LoggingEvent;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -11,17 +10,23 @@ import java.util.List;
 public class MemAppender extends AppenderSkeleton {
     private static MemAppender instance;
     private List<LoggingEvent> logs;
-    private Layout layout; // 依赖项
-    private int maxSize = 100; // 默认最大尺寸
+    private Layout layout;
+    private int maxSize = 100;
     private long discardedLogCount = 0;
 
     private MemAppender() {
+
         logs = new ArrayList<>();
     }
 
     public static synchronized MemAppender getInstance() {
         if (instance == null) {
             instance = new MemAppender();
+            try {
+                MemAppenderMBean.registerMBean(instance);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
         return instance;
     }
@@ -44,6 +49,11 @@ public class MemAppender extends AppenderSkeleton {
 
     public List<LoggingEvent> getCurrentLogs() {
         return Collections.unmodifiableList(logs);
+    }
+
+
+    public void initLogs(List<LoggingEvent> newLogs) {
+        this.logs = newLogs;
     }
 
     @Override
@@ -81,10 +91,12 @@ public class MemAppender extends AppenderSkeleton {
     public void close() {
         logs.clear();
     }
+
     public void clear() {
         logs.clear();
         discardedLogCount = 0;
     }
+
     @Override
     public boolean requiresLayout() {
         return true;
